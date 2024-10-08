@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Espera</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e; /* Cor de fundo do site */
+      color: #e1e1e1; /* Cor do texto similar ao site */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    h1 {
+      color: #ff4747; /* Cor de destaque semelhante à usada no site */
+    }
+
+    .message {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #e1e1e1; /* Texto com cor clara */
+    }
+
+    button {
+      background-color: #ff4747; /* Cor do botão */
+      color: #1e1e1e; /* Cor do texto no botão */
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c73a3a; /* Efeito hover */
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #e1e1e1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Em breve no ar!</h1>
+    <p class="message">Estamos finalizando os últimos detalhes do site. Enquanto isso, você pode adicionar esta página aos seus favoritos para acessar rapidamente quando estiver pronto!</p>
+    <button onclick="adicionarFavoritos()">Adicionar aos Favoritos</button>
+    <p class="info">Pressione Ctrl + D (Windows) ou Cmd + D (Mac) para salvar manualmente se o botão não funcionar.</p>
+  </div>
+
+  <script>
+    function adicionarFavoritos() {
+      var url = window.location.href;
+      var titulo = document.title;
+
+      try {
+        // Tenta adicionar o site aos favoritos
+        window.external.AddFavorite(url, titulo);
+      } catch (e) {
+        alert("Pressione Ctrl + D (Windows) ou Cmd + D (Mac) para adicionar aos favoritos.");
+      }
+    }
+  </script>
+</body>
+</html>
