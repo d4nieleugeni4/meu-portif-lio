@@ -1,80 +1,276 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ff4747">
-  <title>Tela de Espera</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e; /* Cor de fundo do site */
-      color: #e1e1e1; /* Cor do texto similar ao site */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-    }
-
-    .container {
-      text-align: center;
-      max-width: 600px;
-    }
-
-    h1 {
-      color: #ff4747; /* Cor de destaque semelhante à usada no site */
-    }
-
-    .message {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      color: #e1e1e1; /* Texto com cor clara */
-    }
-
-    button {
-      background-color: #ff4747; /* Cor do botão */
-      color: #1e1e1e; /* Cor do texto no botão */
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #c73a3a; /* Efeito hover */
-    }
-
-    .info {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #e1e1e1;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Em breve no ar!</h1>
-    <p class="message">Estamos finalizando os últimos detalhes do site. Enquanto isso, você pode adicionar esta página aos seus favoritos para acessar rapidamente quando estiver pronto!</p>
-    <button onclick="adicionarFavoritos()">Adicionar aos Favoritos</button>
-    <p class="info">Pressione Ctrl + D (Windows) ou Cmd + D (Mac) para salvar manualmente se o botão não funcionar.</p>
-  </div>
-
-  <script>
-    function adicionarFavoritos() {
-      var url = window.location.href;
-      var titulo = document.title;
-
-      try {
-        // Tenta adicionar o site aos favoritos
-        window.external.AddFavorite(url, titulo);
-      } catch (e) {
-        alert("Pressione Ctrl + D (Windows) ou Cmd + D (Mac) para adicionar aos favoritos.");
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#BEBEBE" />
+    <meta name="msapplication-TileColor" content="#BEBEBE" />
+    <meta name="application-name" content="Meu Portfólio" />
+    <meta
+      name="description"
+      content="Portfólio pessoal de Daniel N.Eugenia, desenvolvedor e programador. Explore meus projetos, entre em contato e conheça mais sobre mim."
+    />
+    <link rel="icon" href="link_para_logo_favicon.ico" type="image/x-icon" />
+    <title>Meu Portfólio</title>
+    <style>
+      /* Resetando os estilos básicos */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    }
-  </script>
-</body>
+
+      /* Definindo altura mínima do corpo */
+      body,
+      html {
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Configurando o fundo da página */
+      body {
+        background: url("https://static.vecteezy.com/system/resources/previews/003/334/919/large_2x/desktop-source-code-and-wallpaper-by-coding-and-programming-free-photo.jpg")
+          no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Container centralizado */
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      /* Estilo destacado para o nome */
+      h1 {
+        font-size: 3rem;
+        color: #ffffff;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      /* Retângulo com efeito blur e sombra */
+      .blur-box {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 30px;
+        width: 350px;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      /* Estilo para os botões */
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      /* Estilo dos botões (agora links) */
+      .buttons a {
+        background: rgba(0, 0, 0, 0.4);
+        border: none;
+        border-radius: 10px;
+        padding: 15px 20px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none; /* Remove sublinhado do link */
+      }
+
+      /* Efeito de hover nos botões */
+      .buttons a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+      }
+
+      /* Estilo das imagens dentro dos botões */
+      .buttons a img {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+      }
+
+      /* Efeito de clique transparente */
+      .buttons a:active {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* Espaçamento entre seções e redes sociais */
+      .separator {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        width: 100%;
+      }
+
+      /* Redes sociais dentro do mesmo contêiner */
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      /* Ícones de redes sociais circulares */
+      .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: scale(1.15);
+      }
+
+      .social-icons a img {
+        width: 30px;
+        height: 30px;
+      }
+
+      /* Barra de rolagem estilizada */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Responsividade para telas menores */
+      @media (max-width: 600px) {
+        .blur-box {
+          width: 90%;
+        }
+
+        .buttons {
+          gap: 10px;
+        }
+
+        .buttons a {
+          font-size: 14px;
+          padding: 12px;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Nome destacado -->
+      <h1>Daniel N.Eugenia</h1>
+
+      <div class="blur-box">
+        <h4 style="color: white; margin-bottom: 20px">ESCOLHA UMA SEÇÃO</h4>
+        <div class="buttons">
+          <a href="pag-projetos.html">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2092/2092655.png"
+              alt="Projetos"
+              title="Projetos"
+            />
+            Projetos
+          </a>
+          <a href="pag-contato.html">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2343/2343694.png"
+              alt="Contato"
+              title="Contato"
+            />
+            Contato
+          </a>
+          <a href="pag-sobre-mim.html">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              alt="Sobre Mim"
+              title="Sobre Mim"
+            />
+            Sobre Mim
+          </a>
+          <a href="produtos.html">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png"
+              alt="Produtos"
+              title="Produtos"
+            />
+            Produtos
+          </a>
+        </div>
+
+        <!-- Separador entre seções e redes sociais -->
+        <div class="separator"></div>
+
+        <!-- Redes sociais no mesmo quadrado -->
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+              alt="Instagram"
+              title="Instagram"
+            />
+          </a>
+          <a href="https://www.github.com" target="_blank" aria-label="GitHub">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png"
+              alt="GitHub"
+              title="GitHub"
+            />
+          </a>
+          <a
+            href="https://wa.me/5524981321901"
+            target="_blank"
+            aria-label="WhatsApp"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png"
+              alt="WhatsApp"
+              title="WhatsApp"
+            />
+          </a>
+          <a
+            href="https://t.me/seu_usuario_telegram"
+            target="_blank"
+            aria-label="Telegram"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"
+              alt="Telegram"
+              title="Telegram"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
