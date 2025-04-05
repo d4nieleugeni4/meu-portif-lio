@@ -1,0 +1,38 @@
+{
+  "categorias": [
+    {
+      "id": "games",
+      "titulo": "Produtos de Jogos",
+      "icone": "https://cdn-icons-png.flaticon.com/512/3612/3612569.png",
+      "banner": "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "descricao": "Vendo contas premium de diversos jogos com itens exclusivos e vantagens. Todos os produtos são 100% seguros e com garantia. Confira minha loja na <a href='https://www.ggmax.com.br/perfil/DN_STORE' target='_blank'>GGMAX</a> para mais ofertas!"
+    },
+    {
+      "id": "scripts",
+      "titulo": "Bots, Hacks e etc",
+      "icone": "https://cdn-icons-png.flaticon.com/512/2888/2888407.png",
+      "banner": "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "descricao": "Scripts com utilidades tops, bots de WhatsApp, Telegram e etc e Hacks diversos"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "101",
+      "categoria": "games",
+      "titulo": "Conta Car Parking Multiplayer 1",
+      "preco": "R$ 5,00",
+      "descricao": "Conta com vários itens desbloqueados",
+      "imagem": "https://tse4.mm.bing.net/th?id=OIP.9PuvyvZVvqnYicfHD5oIWgHaEK&pid=Api&P=0&h=180",
+      "link_compra": "https://www.ggmax.com.br/anuncio/promo-on-conta-full-cpm"
+    },
+    {
+      "id": "102",
+      "categoria": "games",
+      "titulo": "Plots Car Parking Multiplayer",
+      "preco": "R$ 2,00 a 7,00",
+      "descricao": "Várias Plots diversas",
+      "imagem": "https://s1.cdn.autoevolution.com/images/news/brian-s-orange-toyota-supra-races-his-1995-mitsubishi-eclipse-buster-145430-7.jpg",
+      "link_compra": "https://www.ggmax.com.br/anuncio/plots-cpm1-velozes-e-furiosos"
+    }
+  ]
+}
