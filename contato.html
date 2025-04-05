@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>Contato</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body,
+      html {
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: url("https://static.vecteezy.com/system/resources/previews/003/334/919/large_2x/desktop-source-code-and-wallpaper-by-coding-and-programming-free-photo.jpg")
+          no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .blur-box {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 30px;
+        width: 350px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      h2 {
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 16px;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+
+      input:focus,
+      textarea:focus {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+      }
+
+      textarea {
+        resize: none;
+        height: 120px;
+      }
+
+      button {
+        background: rgba(0, 0, 0, 0.6);
+        border: none;
+        border-radius: 10px;
+        padding: 15px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .back-button {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .back-button button {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .back-button button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Estilo das redes sociais */
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: scale(1.15);
+      }
+
+      .social-icons a img {
+        width: 25px;
+        height: 25px;
+      }
+
+      /* Estilo do Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.8);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="blur-box">
+      <h2>Contato</h2>
+      <form id="contactForm">
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Seu nome"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Seu email"
+          required
+        />
+        <textarea
+          id="mensagem"
+          name="mensagem"
+          placeholder="Sua mensagem"
+          required
+        ></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+
+      <!-- Redes sociais -->
+      <div class="social-icons">
+        <a
+          href="https://github.com/seu-usuario-github"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png"
+            alt="GitHub"
+            title="GitHub"
+          />
+        </a>
+        <a
+          href="https://wa.me/seu-numero-whatsapp"
+          target="_blank"
+          aria-label="WhatsApp"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png"
+            alt="WhatsApp"
+            title="WhatsApp"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/seu-usuario-instagram"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+            alt="Instagram"
+            title="Instagram"
+          />
+        </a>
+        <a href="mailto:seu-email@gmail.com" target="_blank" aria-label="Gmail">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/281/281769.png"
+            alt="Gmail"
+            title="Gmail"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="back-button">
+      <button onclick="window.location.href='index.html'">
+        Voltar ao Início
+      </button>
+    </div>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Impede o comportamento padrão do formulário
+
+          // Captura os valores dos campos
+          const nome = document.getElementById("nome").value;
+          const email = document.getElementById("email").value;
+          const mensagem = document.getElementById("mensagem").value;
+
+          if (nome && email && mensagem) {
+            alert("Mensagem enviada com sucesso!");
+            document.getElementById("contactForm").reset(); // Reseta o formulário
+          } else {
+            alert("Por favor, preencha todos os campos.");
+          }
+        });
+    </script>
+  </body>
+</html>
