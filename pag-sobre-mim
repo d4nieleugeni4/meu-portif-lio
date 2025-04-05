@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>Sobre Mim</title>
+    <style>
+      body,
+      html {
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: url("https://static.vecteezy.com/system/resources/previews/003/334/919/large_2x/desktop-source-code-and-wallpaper-by-coding-and-programming-free-photo.jpg")
+          no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .blur-box {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 30px;
+        width: 350px;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .profile-container {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px;
+      }
+
+      .profile-pic {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.5s ease;
+      }
+
+      .carousel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .profile-container:hover .profile-pic {
+        opacity: 0;
+      }
+
+      .profile-container:hover .carousel {
+        opacity: 1;
+      }
+
+      .info {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      .info p {
+        color: white;
+        margin: 10px 0;
+        font-size: 14px;
+      }
+
+      .info p strong {
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      .skills {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .skills h3 {
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      .skills div {
+        margin: 10px 0;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .skills progress {
+        width: 100%;
+        height: 15px; /* Aumentei a altura da barra */
+        border-radius: 10px; /* Bordas mais arredondadas */
+        background: rgba(255, 255, 255, 0.2); /* Fundo da barra */
+        border: none;
+        overflow: hidden; /* Esconde o conteúdo que ultrapassa */
+      }
+
+      /* Estilizando a parte preenchida da barra de progresso */
+      .skills progress::-webkit-progress-value {
+        background: linear-gradient(
+          90deg,
+          #6a11cb,
+          #2575fc
+        ); /* Gradiente moderno */
+        border-radius: 10px; /* Bordas arredondadas */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+      }
+
+      .skills progress::-moz-progress-bar {
+        background: linear-gradient(90deg, #6a11cb, #2575fc);
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .skills progress::-webkit-progress-bar {
+        background: rgba(255, 255, 255, 0.2); /* Fundo da barra */
+        border-radius: 10px;
+      }
+
+      .back-button {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .back-button button {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 10px 20px;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .back-button button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.8);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="blur-box">
+      <h2 style="color: white; margin-bottom: 20px">Sobre Mim</h2>
+
+      <!-- Container das minhas fotos do carrossel -->
+      <div class="profile-container">
+        <img src="fotos/eu.jpg" alt="Minha Foto" class="profile-pic" />
+        <div class="carousel">
+          <img src="fotos/eu1.jpg" alt="Foto 1" />
+          <img src="fotos/eu2.jpg" alt="Foto 2" />
+          <img src="fotos/eu3.jpg" alt="Foto 3" />
+        </div>
+      </div>
+
+      <!-- Informações pessoais -->
+      <div class="info">
+        <p><strong>Nome:</strong> Daniel Nascimento Eugenia</p>
+        <p><strong>Idade:</strong> 15 anos</p>
+        <p><strong>Região:</strong> Miguel Pereira - RJ</p>
+        <p>
+          <strong>Atuação:</strong> Desenvolvedor Web, Designer, Gamer,
+          Marketing Digital
+        </p>
+      </div>
+
+      <!-- Descrição -->
+      <p style="color: white; text-align: left">
+        Meu nome é Daniel, sou um programador front-end e estou aprendendo HTML,
+        CSS e JavaScript. Tenho interesse em desenvolvimento web, design e
+        tecnologia em geral.
+      </p>
+
+      <!-- Habilidades -->
+      <div class="skills">
+        <h3>Habilidades</h3>
+        <div>HTML: <progress value="85" max="100"></progress> 85%</div>
+        <div>CSS: <progress value="70" max="100"></progress> 70%</div>
+        <div>JavaScript: <progress value="20" max="100"></progress> 20%</div>
+      </div>
+    </div>
+
+    <!-- Botão de voltar -->
+    <div class="back-button">
+      <button onclick="window.location.href='index.html'">
+        Voltar ao Início
+      </button>
+    </div>
+
+    <script>
+      // Script para o carrossel de fotos
+      const carousel = document.querySelector(".carousel");
+      const images = carousel.querySelectorAll("img");
+      let currentIndex = 0;
+
+      function showNextImage() {
+        // Esconde a imagem atual
+        images[currentIndex].style.opacity = 0;
+
+        // Avança para a próxima imagem
+        currentIndex = (currentIndex + 1) % images.length;
+
+        // Mostra a próxima imagem
+        images[currentIndex].style.opacity = 1;
+      }
+
+      // Inicia o carrossel quando o mouse passa sobre o container
+      carousel.parentElement.addEventListener("mouseenter", () => {
+        images[currentIndex].style.opacity = 1; // Mostra a primeira imagem
+        setInterval(showNextImage, 2000); // Troca de imagem a cada 2 segundos
+      });
+
+      // Reseta o carrossel quando o mouse sai
+      carousel.parentElement.addEventListener("mouseleave", () => {
+        images.forEach((img) => (img.style.opacity = 0)); // Esconde todas as imagens
+        currentIndex = 0; // Reinicia o índice
+      });
+    </script>
+  </body>
+</html>
